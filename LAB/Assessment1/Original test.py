@@ -16,9 +16,9 @@ def sqlserver_connection():
     connection.close()
 
 def test1(sqlserver_connection):
-    cursor = sqlserver_connection.cursor()
-    cursor.execute(open('1.sql', 'r').read())
-    rows = cursor.fetchall()
+    cursor = sqlserver_connection.cursor()    
+    cursor.execute(open('1.sql', 'r').read()) 
+    rows = cursor.fetchall()                  
     cursor.close()
     assert rows == [('sunset_lover', 400), ('sky_wanderer', 350), ('neon_ninja', 250), ('starlight_dancer', 200), ('zen_master', 150)]
     

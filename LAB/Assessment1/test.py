@@ -17,9 +17,9 @@ def sqlserver_connection():
     connection.close()
 
 def test1(sqlserver_connection):
-    cursor = sqlserver_connection.cursor()
-    cursor.execute(open('1.sql', 'r').read())
-    rows = cursor.fetchall()
+    cursor = sqlserver_connection.cursor() #creates a cursor.; #cursor is a database object that lets you: Execute SQL commands,Fetch results row by row or all at once.
+    cursor.execute(open('1.sql', 'r').read())			# sends it to the database for execution
+    rows = cursor.fetchall()					#retrieves all rows from the query result,stores them as a list of tuples into the variable rows.
     cursor.close()
     #print(rows)  # What you fetched
     #print([[type(col) for col in row] for row in rows])  # Data types correctly
